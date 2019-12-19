@@ -1,0 +1,6 @@
+<launch>
+    <arg name="interval" default="30" />
+    <node name="worker" pkg="substrate_sensor_demo" type="worker_node" output="screen" respawn="true">
+        <param name="interval" value="$(arg interval)" />
+    </node>
+</launch>
