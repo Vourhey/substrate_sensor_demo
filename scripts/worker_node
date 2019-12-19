@@ -14,7 +14,7 @@ from robonomics_msgs.msg import Demand, Result
 from ipfs_common.msg import Multihash
 from ipfs_common.ipfs_rosbag import IpfsRosBag
 
-from sen0233_sensor_agent.sensors import SEN0233
+from substrate_sensor_demo.sensors import SEN0233
 
 class WorkerNode:
 
