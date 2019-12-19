@@ -43,7 +43,7 @@ class WorkerNode:
             result_dict = self.sensor.data()
 
             res = Result()
-            res.liability = msg.sender
+            res.liability = Address("0x0000000000000000000000000000000000000000")
             res.result = self.get_multihash(result_dict)
             res.success = True
 
