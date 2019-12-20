@@ -10,8 +10,9 @@ import rospy
 from std_msgs.msg import String
 
 # AIRA
-from robonomics_msgs.msg import Demand, Result
+from robonomics_msgs.msg import Result
 from ipfs_common.msg import Multihash
+from ethereum_common.msg import Address
 from ipfs_common.ipfs_rosbag import IpfsRosBag
 
 from substrate_sensor_demo.sensors import SEN0233
