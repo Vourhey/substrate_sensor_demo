@@ -8,7 +8,7 @@ class SEN0233:
         physicalPort = '/dev/ttyS0'
 
         self.serialPort = serial.Serial(physicalPort)
-        self.buff = deque(maxlen=4)
+        self.buff = deque([0, 0, 0, 0], maxlen=4)
 
         def read_most_recent_data(buff: deque):
             while True:
