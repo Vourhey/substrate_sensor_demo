@@ -52,7 +52,7 @@ class WorkerNode:
 
             self.result_publish.publish(res)
 
-            Timer(self.interval, send_result)
+            Timer(self.interval, send_result).start()
 
         send_result()
         rospy.spin()
