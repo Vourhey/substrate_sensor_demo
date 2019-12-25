@@ -32,6 +32,7 @@ while True:
             HDSb=data[33]          #Read Humidity Low 8-bit
             HDS=(HDSa<<8)+HDSb      #Humidity value
         else:
+            self.serialPort.reset_input_buffer()
             PMS = 0
             FMHDS = 0
             TPS = 0

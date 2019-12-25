@@ -4,9 +4,7 @@ import rospy
 from collections import deque
 
 class SEN0233:
-    def __init__(self):
-        physicalPort = '/dev/ttyS0'
-
+    def __init__(self, physicalPort="/dev/ttyS0"):
         self.serialPort = serial.Serial(physicalPort)
         self.buff = deque([0, 0, 0, 0], maxlen=4)
 
@@ -34,6 +32,7 @@ class SEN0233:
                         HDSb = d[33]             # Read Humidity Low 8-bit
                         HDS = (HDSa<<8)+HDSb        # Humidity value
                     else:
+                        self.serialPort.reset_input_buffer()
                         PMS = 0
                         FMHDS = 0
                         TPS = 0
@@ -41,7 +40,7 @@ class SEN0233:
 
                     buff.append(round(TPS/10, 2))
                     buff.append(round(HDS/10, 2))
-                    buff.append(FMHDS)
+                    buff.append(round(FMHDS/1000, 3))
                     buff.append(PMS)
                 rospy.sleep(0.7)
 
