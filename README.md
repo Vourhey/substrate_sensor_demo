@@ -32,7 +32,7 @@ substrate_sensor.port = "/dev/ttyS0";   # optional
 or manually:
 
 ```
-systemd.services.akkol = {
+systemd.services.substrate_sensor = {
    requires = [ "roscore.service" ];  
    after = ["roscore.service" ];
    wantedBy = [ "multi-user.target" ];
